@@ -1,0 +1,299 @@
+/*media queries are used to adjust the elements osf web page according to the 
+width */
+
+/*meadia query for 1200px*/
+@media screen and (max-width: 1200px) {
+  .favs {
+    display: none !important;
+  }
+  /* reduced size of search bar */
+  .fa-search {
+    width: 30%;
+  }
+  input {
+    font-size: 11px !important;
+  }
+  .header-search > div:nth-child(1) {
+    position: absolute;
+    top: 8% !important;
+  }
+  .header-search > div:nth-child(3) {
+    position: absolute;
+    top: 8% !important;
+  }
+}
+
+/*meadia query for 900px*/
+
+@media screen and (max-width: 900px) {
+  /*used below label in indexmain.css file here there its is display : none*/
+  /*here it is displayed as block we can use visibility also*/
+  label[for="aside-checkbox-right-sec"] {
+    display: block !important;
+  }
+
+  /*the right section is hidden with n kept absolute so it shold now make any difference 
+	to left section*/
+  .right-section {
+    visibility: hidden;
+    position: absolute !important;
+    width: 250px !important;
+    height: 64vh;
+    background-color: #050043;
+    box-shadow: 0px 0px 2px 1px white;
+    right: 20px;
+    top: 20%;
+    z-index: 5;
+    transition: visibility ease-in-out 0.2s;
+    transition: opacity ease-in-out 0.2s;
+  }
+
+  body {
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+  /*when we click on label the hidden right section is displayed now*/
+
+  input[id="aside-checkbox-right-sec"]:checked ~ .right-section {
+    visibility: visible;
+    overflow: hidden;
+  }
+
+  .queue-section-child {
+    overflow: visible;
+  }
+
+  /*to make queue options visible above labelss*/
+  .queue-options {
+    z-index: 10;
+  }
+
+  .left-section {
+    width: 100%;
+  }
+
+  /* parent-animate-block adjustment */
+  .parent-animate-block {
+    height: 9%;
+  }
+  /* parent-animate-block image size adjustment*/
+  .child-animate-block img {
+    height: 18vw;
+    width: 25vw;
+  }
+
+  /* animations for image hover */
+
+  .child-animate-block img:hover {
+    z-index: 4;
+    box-shadow: 0px 0px 12px 0.1px black;
+    height: 22vw;
+    width: 31vw;
+  }
+
+  /*latest release width set to 300px*/
+  .card {
+    min-width: 300px;
+  }
+  /*incresing the content of stations*/
+  .music-themes .stations {
+    width: 100% !important;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /*making the main theme at center*/
+  .music-themes .theme-main {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  /*stations div and theme content*/
+  .theme-main div {
+    width: 15vw;
+  }
+
+  .theme-content {
+    width: 12vw !important;
+    height: 12vw !important;
+  }
+  .theme-content img {
+    width: 12vw !important;
+    height: 12vw !important;
+  }
+  .theme-content p {
+    font-size: 3vw !important;
+    top: -12.5vw !important;
+  }
+
+  /*adjusting the header icons */
+  .header-search > div:nth-child(1) {
+    position: absolute;
+    top: 8% !important;
+  }
+  .header-search > div:nth-child(3) {
+    position: absolute;
+    top: 8% !important;
+  }
+}
+
+/*meadia query for 700px*/
+
+@media screen and (max-width: 750px) {
+  .footer-child-class div {
+    font-size: 12px;
+  }
+
+  .audio-container {
+    width: max-width !important;
+  }
+}
+
+/*media screen at 500px*/
+
+@media screen and (max-width: 500px) {
+  /*we cant directly write the display as block as it will totally change the entire block to 
+	messy page insted giver margin keeping the heoght and width in mind o that the flex property 
+	adjust itself properly*/
+  .new-songs-child div p {
+    font-size: 10px;
+  }
+
+  /*here image is adjusted*/
+  .new-songs-child div img {
+    height: 15vw !important;
+    width: 15vw !important;
+    min-width: 60px;
+    background-size: contain;
+    transition: 0.3s ease-in-out;
+    /*transition: all cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.5s;*/
+  }
+
+  /*this list represents latest hindi and latest english adjustments */
+  /*to wrap content in column the margins are most important and height /width
+otheriase it will merge in ont aanother*/
+  .new-songs-child div {
+    margin: 2vw 1vw;
+    width: 10.2vw;
+    min-width: 60px;
+    min-width: 60px;
+  }
+
+  /*Mood Container*/
+  /*adjusting the elements to column when web page size decreases*/
+  .mood-container {
+    display: flex;
+    justify-content: space-around !important;
+    align-items: center;
+    flex-direction: column !important;
+    flex-wrap: wrap;
+  }
+
+  /*adjusting the elements to column when web page size decreases*/
+  .mood-container div {
+    max-height: 400px !important;
+    max-width: 400px !important;
+    margin: 1vw 0px;
+  }
+}
+
+/*media screen mobile view*/
+
+@media screen and (max-width: 400px) {
+  /*header section */
+  .header-left-section {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0% 50%;
+  }
+
+  /*moving bell icon to left with 30px */
+  .bell-icon {
+    margin-right: 30px;
+  }
+
+  /*hiding the favourites and right image icon*/
+  .favourites {
+    display: none;
+  }
+  .img2-icon {
+    display: none;
+  }
+
+  /*footer image is hided */
+  .layout-container img {
+    display: none;
+  }
+
+  /*latest release container propeties*/
+  .latest-release-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    flex-wrap: wrap;
+    color: white;
+  }
+
+  /*latest release div container propeties*/
+  .latest-release-container > div {
+    width: 100% !important;
+    height: 100px;
+    margin: 5px 0px;
+  }
+
+  /*card width 0px*/
+  .card {
+    min-width: 0px !important;
+  }
+
+  /*song name size*/
+  .song-name {
+    font-size: 15px !important;
+    margin: 0 !important;
+  }
+
+  /*left- section set to 100%*/
+
+  .left-section {
+    width: 100%;
+  }
+
+  /*set the right-section to absolute*/
+  .right-section {
+    position: absolute;
+    height: 60vh;
+    background-color: #050043;
+    box-shadow: 0px 0px 2px 1px white;
+    right: 10%;
+    top: 20% !important;
+    z-index: 5;
+    transition: visibility ease-in-out 0.2s;
+    transition: opacity ease-in-out 0.2s;
+  }
+
+  /*latest hindi / english set to column and centered*/
+  .new-songs-child {
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  /*height and width of images in latest hindi and english*/
+  .new-songs-child .lh-theme img {
+    width: 100px !important;
+    height: 100px !important;
+  }
+}

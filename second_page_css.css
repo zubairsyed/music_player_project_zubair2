@@ -1,0 +1,928 @@
+body {
+  margin: 0px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  animation: loading 1s;
+}
+
+/*MAIN*/
+/*important factors to rememeber*/
+/*box-sizing : border-box it helps in allowing the border and padding inside the div*/
+/*padding : 0% 3% this helps the inner content to compress 30% from each side leftand right*/
+main {
+  width: 100%;
+  padding: 0% 3%;
+  box-sizing: border-box;
+  height: 83vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  transition: all ease-in-out 1s;
+  /*	background: linear-gradient(180deg,#ee0979,#ff6a00);
+*/
+  background: linear-gradient(180deg, #0f0c29, #302b63);
+}
+
+.body-header {
+  position: relative;
+  font-family: sans-serif;
+  letter-spacing: 0.5px;
+  height: 60px;
+  z-index: 10;
+  background-image: linear-gradient(90deg, red, blue, purple, orange);
+}
+
+/*Displays first half (icon & favourites)*/
+div.header-left-section {
+  width: 100%;
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0% 4%;
+}
+
+/*Adding flex to image icons and name*/
+.img-icon {
+  display: flex;
+}
+
+.header-left-section img {
+  margin-top: 5px;
+}
+
+/*properties of header 1st image*/
+.img-icon img {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  animation-name: changeshape1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+/*properties of header 2nd image*/
+.img2-icon img {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  animation-name: changeshape1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+/*img2-icon*/
+@keyframes changeshape1 {
+  from {
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*Adding left space to favourites*/
+.favourites {
+  color: white;
+  animation: fav-animation 1s ease-in-out infinite;
+}
+
+@keyframes fav-animation {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.2, 1.2);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+/*Displays 2nd half (search bar,bell icon,image)*/
+div.header-right-section {
+  width: 30%;
+  display: flex;
+}
+/*adjusting space around (search bar,bell icon,image)*/
+div.header-right-section div {
+  flex-grow: 2;
+}
+
+/*Adding left space to bel icon*/
+div.bell-icon {
+  position: relative;
+  width: min-content;
+}
+
+/*display bell-icon*/
+.fa-bell {
+  color: white;
+  position: absolute;
+  font-size: 25px;
+}
+
+.fa-bell:hover {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 0.5s;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
+  color: yellow;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0);
+  }
+  15% {
+    transform: rotate(5deg);
+  }
+  30% {
+    transform: rotate(-5deg);
+  }
+  45% {
+    transform: rotate(4deg);
+  }
+  60% {
+    transform: rotate(-4deg);
+  }
+  75% {
+    transform: rotate(2deg);
+  }
+  85% {
+    transform: rotate(-2deg);
+  }
+  92% {
+    transform: rotate(1deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+/*icon-name spotifymusic name*/
+.icon-name {
+  font-size: 17px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/*giving margin top for class head1 (favourites,input1,bell-icon)*/
+div.head1 {
+  margin-top: 15px;
+}
+
+/*header search*/
+.header-search {
+  width: 20%;
+  position: relative;
+  top: 20%;
+}
+
+.header-search div {
+  display: inline-block;
+}
+
+/*header search icon*/
+.header-search > div:nth-child(1) {
+  position: absolute;
+  width: min-content;
+  display: inline-block;
+  left: 5%;
+  top: 11%;
+  transition: all ease-in-out 0.5s;
+}
+
+/*header search input*/
+.header-search input {
+  width: 100%;
+  outline: none;
+  border-radius: 18px;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 5px;
+  border: none;
+  font-weight: 500;
+  text-align: center;
+}
+
+/*header search microphone icon*/
+.header-search > div:nth-child(3) {
+  display: inline-block;
+  position: absolute;
+  right: 0%;
+  top: 10%;
+  width: min-conent;
+}
+
+/*fa-microphone icon under input*/
+.header-search input:hover {
+  box-shadow: 0px 0px 2px 2px white;
+}
+
+div.header-search .fa-microphone:hover {
+  color: blue;
+}
+
+/*Aside Left Section */
+/*aside left - parent section*/
+.left-section {
+  /*position: relative;*/
+
+  width: 70%;
+  height: inherit;
+  background-color: red;
+  background: linear-gradient(180deg, #aa076b, #61045f);
+}
+
+/*top block of left section*/
+/*keeping the child section as relative with the required width and height*/
+.left-child-section-top {
+  position: relative;
+  height: 45%;
+  width: 100%;
+  background-color: pink;
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(180deg, #ee0979, #ff6a00);
+}
+
+/*div tag for image*/
+.ls-image-div {
+  position: relative;
+  width: 40%;
+  height: 100%;
+  background-color: yellow;
+  overflow: hidden;
+}
+
+/*setting the height and width of image*/
+.ls-image-div img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  transition: all ease-in-out 0.5s;
+}
+
+/*hover properties on image*/
+.ls-image-div img:hover {
+  transform: scale(1.5);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*left side container*/
+/*the right part of left section width 60%*/
+.ls-content {
+  /*background: linear-gradient(180deg,#834d9,#d04ed6);*/
+  color: white;
+  width: 60%;
+  box-sizing: border-box;
+  padding: 3% 2%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  background: linear-gradient(180deg, #aa076b, #61045f 90%);
+  /*background: linear-gradient(180deg,#753a88,#cc2b5e);*/
+  /*background: linear-gradient(180deg,#aa076b,#61045f 100%);*/
+  /*background: linear-gradient(180deg,#ee0979,#ff6a00);*/
+}
+
+/*the properties set to div child1*/
+.ls-content div:nth-child(1) {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/*second div of ls-content*/
+.ls-content div:nth-child(2) {
+  margin-top: 0.3vw;
+  font-size: 1vw;
+  text-align: justify;
+}
+
+/*3rd div consists of button and follow text divs individually */
+
+/*unable to change the follow position as it ws upper to play button
+so used padding to adjust*/
+
+.ls-content div:nth-child(3) {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 40%;
+  margin-top: 1vw;
+  text-align: center;
+}
+
+.ls-content div:nth-child(3) > p {
+  padding-top: 0.2vw;
+  font-weight: 500;
+  font-size: 1.2vw;
+}
+
+/*button properties*/
+.ls-button button {
+  box-sizing: content-box;
+  font-size: 1vw;
+  height: 2vw;
+  width: 5vw;
+  transition: all ease-in-out 0.5s;
+  background: linear-gradient(
+    90deg,
+    #ff6a00,
+    #ee0979
+  ); /*
+	background: linear-gradient(180deg,#aa076b ,#61045f 90%);*/
+}
+
+/*button hover*/
+.ls-button button:hover {
+  transform: scale(1.01);
+  border-radius: 10px;
+  cursor: pointer;
+  /*box-shadow: 0px 0px 2px 1px white;*/
+
+  background: linear-gradient(180deg, #aa076b, #61045f 90%);
+  /*background: linear-gradient(90deg,#ff6a00,#ee0979);*/
+}
+
+/*bottom div of 247plays and 24 albums*/
+.ls-content p:nth-child(4) {
+  position: relative;
+  font-size: 11px;
+}
+
+/*#################   LEFT section2    #########################*/
+
+/*left bottom section*/
+.left-section2-parent {
+  position: relative;
+  top: 10px;
+  background-color: pink;
+  height: 44.25vh;
+  overflow: scroll;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, #000428, #004e92);
+}
+
+/*to hide the scroller of y-axis*/
+.left-section2-parent::-webkit-scrollbar {
+  display: none;
+}
+
+/*bottom list container*/
+.ls2-container {
+  height: 8vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+  background-color: skyblue;
+  background: linear-gradient(90deg, #833ab4, #fd1d1d, #fcb045);
+  /*background: linear-gradient(180deg,#000428,#004e92);*/
+  transition: all ease-in-out 0.5s;
+  /*border: 2px solid black;*/
+}
+
+.fa-heart {
+  color: white;
+}
+
+.ls2-container:hover {
+  background: linear-gradient(180deg, #000428, #004e92);
+  background-color: rgba(0, 0, 250, 1);
+  color: white;
+  cursor: pointer;
+}
+
+.ls2-container:hover .fa-heart {
+  cursor: pointer;
+  font-weight: 200;
+  animation: heart-blink infinite 0.5s alternate;
+}
+
+/*keyframes always helps in animating the page on hover or when we start the web page
+it animates continiuosly*/
+@keyframes heart-blink {
+  0% {
+    color: white;
+    transform: scale(1.1) rotate(10deg);
+  }
+  50% {
+    color-rendering: yellow;
+    transform: scale(1.1) rotate(-10deg);
+  }
+  100% {
+    color: red;
+    transform: scale(1.1) rotate(10deg);
+  }
+}
+
+/*left block*/
+
+.ls2-left-block {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 30%;
+  padding: 0% 1%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/*image div position is set to relative and set the left and right margins*/
+/*position relative hepls in keeping the image positioned consedring the other*/
+/*attributes*/
+.ls2-image {
+  height: 90%;
+  min-width: 50px;
+  max-width: 50px;
+  margin: 0px 12% 0px 12%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+/*setting properties of image*/
+
+.ls2-image img {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+
+/*before used only paragraph and under that play button icon*/
+/*but this div play-button div helps in other sections too if we qrite once */
+/*so that it can be ujsed in right section on hovering the image*/
+.play-button {
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  font-size: yellow;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transition: all ease-in-out 0.5s;
+}
+
+/*hovering on play button*/
+.play-button:hover {
+  cursor: pointer;
+  opacity: 1;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/*setting the properties of play button icon*/
+.fa-play {
+  font-size: 27px;
+  color: white;
+}
+
+/*song time */
+.ls2-container > div:nth-child(2) {
+  font-size: 12px;
+  width: min-content;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+/*right block*/
+.ls2-right-block {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 50px;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 2%;
+}
+
+/*	*********			RIGHT SECTION 		************		*/
+
+/*right section*/
+aside {
+  display: inline-block;
+}
+
+/*right section height width*/
+.right-section {
+  width: 30%;
+  height: 83vh;
+  background-color: red;
+}
+
+/*hiding the y axis scroller*/
+.right-section::-webkit-scrollbar {
+  display: none;
+}
+
+/*label for right side container*/
+label[for="checkbox-600px"] {
+  height: max-content;
+  width: max-content;
+  font-size: 20px;
+  padding: 5px;
+  background-color: white;
+  position: absolute;
+  right: 1vw;
+  overflow: hidden;
+  text-align: center;
+  background-color: grey;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 5px;
+  box-shadow: 0px 0px 1px 1px white;
+  display: none;
+}
+
+input[id="checkbox-600px"] {
+  overflow: hidden;
+  height: max-content;
+  width: max-content;
+  background-color: white;
+  position: absolute;
+  right: 1vw;
+  display: none;
+}
+
+/****************     RIGHT TOP SECTION *****************************/
+
+/*There are 2 blocks in right section better to use 2 classes to refelct the same 
+on both top and bottom class*/
+
+/*== From here for both blocks *similar-artist song and recently played block* classes start ==*/
+/*Aside container -- right-top-container , right-bottomm-container properties*/
+.aside-container {
+  height: 47%;
+  width: 100%;
+  color: white;
+  background-color: skyblue;
+  overflow: scroll;
+  overflow-x: hidden;
+  background: linear-gradient(180deg, #aa076b, #61045f 90%);
+}
+
+/*hiding the y-axis scroll bar on both the blocks*/
+.aside-container::-webkit-scrollbar {
+  display: none;
+}
+
+/*header propertie for right blocks*/
+.aside-right-header {
+  background-color: yellow;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  height: max-content;
+  margin-bottom: 4%;
+  flex-direction: row;
+  padding: 1% 2%;
+  box-sizing: border-box;
+  background: linear-gradient(90deg, #3494e6, #ec6ead);
+}
+
+/*hovering on viewall*/
+.aside-right-header p:hover {
+  color: blue;
+  font-size: 15.5px;
+  font-weight: 500;
+}
+
+/*the list of songs of similar artist and recently played*/
+.aside-right-list {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 31vh;
+  width: 100%;
+  overflow: scroll;
+  overflow-x: hidden;
+  background: linear-gradient(180deg, #000428, #004e92);
+  background-color: cyan;
+}
+
+/*hiding the y-axis of inner play list*/
+.aside-right-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* I have divided the music block section in to 2 parts 1st : *mb-image-song-child (class)* 
+consists of image and song name*/
+/**/
+
+/*music block*/
+.music-block {
+  background: linear-gradient(90deg, #753a88, #cc2b5e);
+  background-color: white;
+  height: 60px;
+  width: 100%;
+  margin-bottom: 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0% 8% 0% 2%;
+  box-sizing: border-box;
+}
+
+.music-block:hover {
+  color: white;
+  background: linear-gradient(180deg, #000428, #004e92);
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+/*similar-artist block*/
+.similar-artist-block {
+  height: auto;
+  width: 100%;
+  padding: 0% 2% 0% 2%;
+}
+
+/*its difficult using the *justify content:space-between* and add margins 
+it will break at mobile view*/
+
+/*so to avoid that using 2 different divs 1 for image,song name and 2nd for 
+the sake of list and timer*/
+
+/*this is the parent class consist of 1st div value */
+.mb-image-song {
+  width: 60%;
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/*similar artist sa-image-song*/
+.sa-image-song {
+  width: 80%;
+  height: auto;
+}
+
+/*/*this is the child class consist of image and song name*/
+.mb-image-song-child {
+  height: 57px;
+  width: 57px;
+  margin: 0% 5% 0% 2%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+/*similar artist sa-image-song-child*/
+.sa-image-song-child {
+  margin: 0% 10% 0% 2%;
+  height: 6vw;
+  width: 6vw;
+  min-height: 57px;
+  min-width: 57px;
+}
+
+/*setting the height and width of image*/
+.mb-image-song-child img {
+  height: 100%;
+  width: 100%;
+  min-width: 50px;
+  min-height: 50px;
+  background-size: cover;
+}
+
+.sa-image-song-child img {
+  height: 100%;
+  width: 100%;
+  /*min-width: 60px;*/
+  /*min-height: 60px;*/
+}
+
+/*adding flex properties to song name individually*/
+/*as we centered the div content the artist band name was comming in center*/
+/*?so to bring that at start position flex start is used in justify-content and align-items*/
+.mb-song-name {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/*size of font*/
+.music-block div p {
+  font-size: 12px;
+}
+
+/*size of menu icon*/
+.fa-ellipsis-h {
+  font-size: 18px;
+}
+
+/*getting the menu icon to extereme right*/
+.extras p:nth-child(1) {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+/*   RIGHT BOTTOM SECTION */
+/***********************************************************************************************/
+/*right bottom container (recently played)*/
+.right-bottom-container {
+  height: 53%;
+  background-color: purple;
+}
+
+.recently-played {
+  height: 36vh;
+}
+
+/*footer*/
+
+/*footer player*/
+
+/*footer container*/
+#footer-parent-id {
+  position: absolute;
+  bottom: 0;
+  height: max-content;
+  width: 100%;
+  background-color: black;
+  display: none;
+  z-index: 5;
+}
+/*footer child class is the child of footer class*/
+.footer-child-class {
+  color: white;
+  position: relative;
+  height: inherit;
+  background-color: yellow;
+  display: flex;
+  justify-content: space-around;
+  background: linear-gradient(180deg, #3c1053, #ad5389);
+}
+/*the right side continer with a width of 20%*/
+.layout-container {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*?font sixe of song name*/
+.footer-song-name {
+  font-size: 20vw;
+}
+
+/*margins and font size of divs*/
+.layout-container div {
+  margin: 0px 3px;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+/*right side image width*/
+.layout-container img {
+  height: 3.5vw;
+  width: 3.5vw;
+  min-height: 50px;
+  min-width: 50px;
+  background-size: cover;
+}
+
+/*audio container consists of total 50% width of footer*/
+.audio-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/*the upper part of audio child container like play,pause,forward,reverse icons*/
+.audio-container-child1 {
+  font-size: 22px;
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*grand parent of timer and music timer class*/
+#music-timer {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+
+/*the line of audio timer is set ti 100%*/
+.timer {
+  color: white;
+  width: 100%;
+}
+
+/*child class of timer*/
+.music-timer {
+  /*color: white;*/
+  -webkit-appearance: none;
+  height: 6px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.5;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  background-color: white;
+  width: 99%;
+  border-radius: 50px;
+}
+
+/*the parent vblock of adjustment container*/
+.adjustment-container {
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*the right side attributes like sound maximize and list , computer view*/
+/*these are all contained in a width of 90% under the div 100% */
+.adjustment-container .adjustment-container-child {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*when we hover on icons the cursor is changed to pointer*/
+.adjustment-container .adjustment-container-child div input,
+i {
+  cursor: pointer;
+}
+
+/*this resembles to the section latest release on clicking on any of the 
+list the footer will be displayed class="song-name" from latest-release div*/
+#footer-parent-id:target {
+  display: block;
+}
+
+/*footer closing cross position*/
+.lni-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 12px;
+  padding: 3px 3px 0px 0px;
+  font-weight: 1000;
+  color: red;
+}
+
+/*On clicking cross symbol on footer is closes*/
+#footer-cross:target {
+  display: none;
+}
+
+.symbols {
+  color: white;
+}
+
+/*page trnsition while loading*/
+@keyframes loading {
+  50% {
+    transform: scale(0.85);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}

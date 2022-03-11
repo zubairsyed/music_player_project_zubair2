@@ -1,0 +1,160 @@
+/*media queries are used to adjust the elements osf web page according to the 
+width */
+
+/*meadia query for 1200px*/
+@media screen and (max-width: 1200px) {
+  .favs {
+    display: none !important;
+  }
+  /* reduced size of search bar */
+  .fa-search {
+    width: 30%;
+  }
+  input {
+    font-size: 11px !important;
+  }
+  .header-search > div:nth-child(1) {
+    position: absolute;
+    top: 8% !important;
+  }
+  .header-search > div:nth-child(3) {
+    position: absolute;
+    top: 8% !important;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  /* added padding to avoid overflow of content */
+  .body-header {
+    padding: 0% 2% 0% 0%;
+  }
+
+  /* label for displaying right section with absolute position */
+  label[for="checkbox-600px"] {
+    display: block;
+    height: max-content;
+    width: max-content;
+    font-size: 20px;
+    padding: 5px;
+    background-color: white;
+    position: absolute;
+    right: 1vw;
+    overflow: hidden;
+    text-align: center;
+    background-color: grey;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 5px;
+    box-shadow: 0px 0px 1px 1px white;
+  }
+
+  /* to make left section occupies the w=whole width */
+  .left-section {
+    width: 100%;
+  }
+  /* to avoid the overflow of content */
+  .img2-icon {
+    display: none;
+  }
+
+  /* when size compresses the right section is hidden it visibles 
+  only when we click on view more*/
+  .right-section {
+    position: absolute;
+    visibility: hidden;
+    width: 250px;
+    right: 10vw;
+    overflow: hidden;
+  }
+
+  /*adjusting the font-size of paragrap of cold play in mobile view*/
+  .ls-content div:nth-child(2) {
+    font-size: 2vw;
+  }
+
+  /* right  displays when we click on the inut label*/
+  input[id="checkbox-600px"]:checked ~ .right-section {
+    position: absolute;
+    width: max-width;
+    overflow: hidden;
+    visibility: visible;
+  }
+
+  main {
+    overflow-x: hidden;
+  }
+
+  main::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  /*adjusting the size image section in mobile view*/
+  .ls-image-div {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background-color: blue;
+    overflow: hidden;
+  }
+
+  /*adjusting the size of paragraph of cold play in mobile view*/
+  .ls-content div:nth-child(2) {
+    margin-top: 0.3vw;
+    font-size: 3vw;
+    text-align: justify;
+  }
+
+  /*adjusting the size of FOLLOW in mobile view*/
+
+  .ls-content div:nth-child(3) > p {
+    padding-top: 0.5vw;
+    font-weight: 500;
+    font-size: 3vw;
+  }
+
+  label[for="checkbox-600px"] {
+    position: absolute;
+    top: 30vw;
+    font-size: 14px;
+    padding: 2px;
+    border: none;
+  }
+  /*header section */
+  .header-left-section {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0% 50%;
+  }
+
+  /*moving bell icon to left with 30px */
+  .bell-icon {
+    margin-right: 30px;
+  }
+
+  /*hiding the favourites and right image icon*/
+  .favourites {
+    display: none;
+  }
+  .img2-icon {
+    display: none;
+  }
+
+  /*footer image is hided */
+  .layout-container img {
+    display: none;
+  }
+
+  /*adjusting the size of button in mobile view*/
+  .ls-button button {
+    box-sizing: content-box;
+    font-size: 3vw;
+    height: 4vw;
+    width: 15vw;
+    transition: all ease-in-out 0.5s;
+    background: linear-gradient(90deg, #ff6a00, #ee0979);
+  }
+}
